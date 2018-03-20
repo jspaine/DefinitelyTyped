@@ -73,6 +73,8 @@ got('todomvc.com', {encoding: 'utf8', hostname: 'todomvc'}).then(response => str
 
 got('todomvc.com', {hostname: 'todomvc'}).then(response => str = response.body);
 
+got('todomvc.com', {cert: "foo"}).then(response => str = response.body);
+
 got.get('todomvc.com', {hostname: 'todomvc'}).then(response => str = response.body);
 got.post('todomvc.com', {hostname: 'todomvc'}).then(response => str = response.body);
 got.put('todomvc.com', {hostname: 'todomvc'}).then(response => str = response.body);

@@ -9,6 +9,7 @@
 
 import { Url } from 'url';
 import * as http from 'http';
+import * as https from 'https';
 import * as nodeStream from 'stream';
 
 export = got;
@@ -98,7 +99,9 @@ declare namespace got {
         json?: boolean;
     }
 
-    interface TimoutRequestOptions extends http.RequestOptions {
+    type HttpRequestOptions = http.RequestOptions & https.RequestOptions;
+
+    interface TimoutRequestOptions extends HttpRequestOptions {
         timeout?: any;
     }
 
